@@ -9,15 +9,25 @@ import Asakage from "./bgm/asakage.mp3";
 
 import styles from "./style.module.css";
 
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function StartMenu() {
+  const router = useRouter();
+
   return (
     <GameContainer bgImage={HomeMenuBg} bgMusic={Asakage}>
       <Image fill src={Logo} priority={true} alt="Kanon logo" />
 
       <ul className={styles.menu}>
-        <li className={styles.menuItem}>New Game</li>
+        <li
+          className={styles.menuItem}
+          onClick={() => {
+            router.push("/game/common-route/part-1");
+          }}
+        >
+          New Game
+        </li>
       </ul>
     </GameContainer>
   );
