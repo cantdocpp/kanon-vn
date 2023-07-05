@@ -22,9 +22,12 @@ export default function GameContainer({ children, bgImage, bgMusic }: Props) {
       src: [bgMusic],
       loop: true,
       volume: 0.8,
+      preload: true,
     });
 
     sound.play();
+
+    return () => sound.stop();
   }, [bgMusic]);
 
   return (
