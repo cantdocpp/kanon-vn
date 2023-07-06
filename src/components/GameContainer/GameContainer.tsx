@@ -3,6 +3,7 @@
 import React from "react";
 
 import type { StaticImageData } from "next/image";
+// @ts-ignore
 import { Howl } from "howler";
 
 import styles from "./style.module.css";
@@ -10,8 +11,8 @@ import styles from "./style.module.css";
 interface Props {
   children: React.ReactNode;
   bgImage: string | StaticImageData;
-  bgMusic?: string;
-  onClick: () => void;
+  bgMusic?: any;
+  onClick?: () => void;
 }
 
 export default function GameContainer({

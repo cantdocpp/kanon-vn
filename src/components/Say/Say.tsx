@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+// @ts-ignore
 import { Howl } from "howler";
 
 import styles from "./say.module.css";
