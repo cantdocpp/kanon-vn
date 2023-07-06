@@ -1,3 +1,5 @@
+import { Stories } from "@/app/types";
+
 import YumeNoAto from "./bgm/yume-no-ato.mp3";
 import Snow from "./bg/snow.png";
 import NayukiBg from "./bg/nayuki-bg.png";
@@ -24,22 +26,6 @@ import Voice17 from "./voice/17.ogg";
 import Voice18 from "./voice/18.ogg";
 import Voice19 from "./voice/19.ogg";
 import Voice20 from "./voice/20.ogg";
-
-interface Story {
-  showText?: boolean;
-  speaker?: string;
-  text?: string;
-  spriteLeft?: string;
-  spriteMiddle?: string;
-  spriteRight?: string;
-  choiceExist?: boolean;
-  soundEffect?: string;
-  bgm?: any;
-  bgImage?: any;
-  voice?: any;
-}
-
-type Stories = Story[];
 
 const stories: Stories = [
   { showText: false, bgm: YumeNoAto, bgImage: Snow },
