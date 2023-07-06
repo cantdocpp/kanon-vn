@@ -3,6 +3,7 @@ import { Stories } from "@/app/types";
 import YumeNoAto from "./bgm/yume-no-ato.mp3";
 import Snow from "./bg/snow.png";
 import NayukiBg from "./bg/nayuki-bg.png";
+import NayukiSmileBg from "./bg/nayuki-smile-bg.png";
 
 //voice
 import Voice0 from "./voice/00.ogg";
@@ -151,7 +152,7 @@ const stories: Stories = [
     text: "My new life, caught like a flag in the winter wind, spreads out before me.",
   },
   { text: "Nayuki: Eh...?", voice: Voice19 },
-  { text: "Nayuki: Okay!", voice: Voice20 },
+  { text: "Nayuki: Okay!", voice: Voice20, bgImage: NayukiSmileBg },
 ];
 
 export default stories;
