@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import GameContainer from "@/components/GameContainer";
 import Say from "@/components/Say";
@@ -9,9 +10,11 @@ import { Stories } from "@/app/types";
 
 interface Props {
   stories: Stories;
+  nextRoute: string;
 }
 
-export default function Gameplay({ stories }: Props) {
+export default function Gameplay({ stories, nextRoute }: Props) {
+  const router = useRouter();
   const [storyIndex, setStoryIndex] = React.useState(0);
   const [showTextbox, setShowTextBox] = React.useState(false);
   const [text, setText] = React.useState("");
@@ -22,6 +25,7 @@ export default function Gameplay({ stories }: Props) {
 
   React.useEffect(() => {
     if (lastIndex) {
+      router.push(nextRoute);
       return;
     }
 

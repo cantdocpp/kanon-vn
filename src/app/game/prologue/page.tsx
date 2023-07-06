@@ -7,5 +7,7 @@ import Gameplay from "@/components/Gameplay/Gameplay";
 import stories from "./story";
 
 export default function Prologue() {
-  return <Gameplay stories={stories} />;
+  const nextRoute = "/game/common-route/part-1";
+
+  return <Gameplay stories={stories} nextRoute={nextRoute} />;
 }
