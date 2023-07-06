@@ -10,10 +10,16 @@ import styles from "./style.module.css";
 interface Props {
   children: React.ReactNode;
   bgImage: string | StaticImageData;
-  bgMusic: string;
+  bgMusic?: string;
+  onClick: () => void;
 }
 
-export default function GameContainer({ children, bgImage, bgMusic }: Props) {
+export default function GameContainer({
+  children,
+  bgImage,
+  bgMusic,
+  onClick,
+}: Props) {
   React.useEffect(() => {
     if (!bgMusic) {
       return;
@@ -40,6 +46,7 @@ export default function GameContainer({ children, bgImage, bgMusic }: Props) {
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
       }}
+      onClick={onClick}
     >
       {children}
     </div>
