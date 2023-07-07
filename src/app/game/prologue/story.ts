@@ -156,7 +156,7 @@ const stories: Stories = [
   },
   { text: "Nayuki: Eh...?", voice: Voice19 },
   { text: "Nayuki: Okay!", voice: Voice20, bgImage: NayukiSmileBg },
-  { showText: "no-text", bgm: "no-bgm", animation: Intro },
+  { showText: "no-text", bgm: "no-bgm", bgImage: "no-image", animation: Intro },
 ];
 
 export default stories;
