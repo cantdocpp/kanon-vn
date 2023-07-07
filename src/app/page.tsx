@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <div>
         <h1>Kanon Project</h1>
-        <Link href="/game/prologue">Click here</Link>
+        <Link href="/game/start-menu">Click here</Link>
       </div>
     </>
   );
