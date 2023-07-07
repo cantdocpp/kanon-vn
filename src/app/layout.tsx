@@ -1,5 +1,9 @@
+"use layout";
+
 import "./globals.css";
 import { Literata } from "next/font/google";
+
+import RouteProgress from "@/components/RouteProgress";
 
 const literata = Literata({ subsets: ["latin"] });
 
@@ -15,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={literata.className}>{children}</body>
+      <body className={literata.className}>
+        <RouteProgress>{children}</RouteProgress>
+      </body>
     </html>
   );
 }
