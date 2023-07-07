@@ -1,5 +1,5 @@
 export interface Story {
-  showText?: boolean;
+  showText?: boolean | "no-text";
   speaker?: string;
   text?: string;
   spriteLeft?: string;
@@ -10,6 +10,7 @@ export interface Story {
   bgm?: any;
   bgImage?: any;
   voice?: any;
+  animation?: any;
 }
 
 export type Stories = Story[];
