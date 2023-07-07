@@ -14,7 +14,7 @@ export default function RouteProgress({
       {children}
       <ProgressBar
         height="2px"
-        color="#000344cc"
+        color="yellow"
         options={{ showSpinner: false }}
         shallowRouting
       />

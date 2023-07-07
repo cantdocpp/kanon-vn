@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import GameContainer from "@/components/GameContainer";
 import Say from "@/components/Say";
+import GameLoading from "../GameLoading/GameLoading";
 
 import { Stories } from "@/app/types";
 
@@ -15,6 +16,7 @@ interface Props {
 
 export default function Gameplay({ stories, nextRoute }: Props) {
   const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
   const [storyIndex, setStoryIndex] = React.useState(0);
   const [showTextbox, setShowTextBox] = React.useState(false);
   const [text, setText] = React.useState("");
@@ -26,6 +28,7 @@ export default function Gameplay({ stories, nextRoute }: Props) {
 
   React.useEffect(() => {
     if (lastIndex) {
+      setLoading(true);
       router.push(nextRoute);
       return;
     }
@@ -80,6 +83,7 @@ export default function Gameplay({ stories, nextRoute }: Props) {
       animation={animation}
       onClick={handleClick}
     >
+      {loading && <GameLoading />}
       {showTextbox && <Say text={text} voice={voice}></Say>}
     </GameContainer>
   );
