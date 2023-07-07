@@ -53,7 +53,7 @@ export default function GameContainer({
         onClick={onClick}
       >
         {animation && (
-          <video autoPlay className="video" onEnded={onClick}>
+          <video autoPlay className={styles.video} onEnded={onClick}>
             <source src={animation} type="video/mp4" />
           </video>
         )}

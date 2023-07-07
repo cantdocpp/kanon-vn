@@ -50,7 +50,11 @@ export default function Gameplay({ stories, nextRoute }: Props) {
       }
     }
     if (story.bgImage) {
-      setBgImage(story.bgImage);
+      if (story.bgImage === "no-image") {
+        setBgImage("");
+      } else {
+        setBgImage(story.bgImage);
+      }
     }
     if (story.voice) {
       setVoice(story.voice);
