@@ -23,7 +23,7 @@ export default function StartMenu() {
         <li
           className={styles.menuItem}
           onClick={() => {
-            router.push("/game/common-route/part-1");
+            router.push("/game/prologue");
           }}
         >
           New Game

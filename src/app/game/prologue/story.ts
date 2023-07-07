@@ -28,6 +28,9 @@ import Voice18 from "./voice/18.ogg";
 import Voice19 from "./voice/19.ogg";
 import Voice20 from "./voice/20.ogg";
 
+// animation video
+import Intro from "./anm/intro.mp4";
+
 const stories: Stories = [
   { showText: false, bgm: YumeNoAto, bgImage: Snow },
   {
@@ -153,6 +156,7 @@ const stories: Stories = [
   },
   { text: "Nayuki: Eh...?", voice: Voice19 },
   { text: "Nayuki: Okay!", voice: Voice20, bgImage: NayukiSmileBg },
+  { showText: "no-text", bgm: "no-bgm", animation: Intro },
 ];
 
 export default stories;

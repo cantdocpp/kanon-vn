@@ -12,6 +12,7 @@ interface Props {
   children: React.ReactNode;
   bgImage: string | StaticImageData;
   bgMusic?: any;
+  animation?: any;
   onClick?: () => void;
 }
 
@@ -19,6 +20,7 @@ export default function GameContainer({
   children,
   bgImage,
   bgMusic,
+  animation,
   onClick,
 }: Props) {
   React.useEffect(() => {
@@ -38,18 +40,25 @@ export default function GameContainer({
   }, [bgMusic]);
 
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundImage: `url(${
-          typeof bgImage === "object" ? bgImage.src : bgImage
-        })`,
-        backgroundSize: "100% 100%",
-        backgroundRepeat: "no-repeat",
-      }}
-      onClick={onClick}
-    >
-      {children}
-    </div>
+    <>
+      <div
+        className={styles.container}
+        style={{
+          backgroundImage: `url(${
+            typeof bgImage === "object" ? bgImage.src : bgImage
+          })`,
+          backgroundSize: "100% 100%",
+          backgroundRepeat: "no-repeat",
+        }}
+        onClick={onClick}
+      >
+        {animation && (
+          <video autoPlay className="video" onEnded={onClick}>
+            <source src={animation} type="video/mp4" />
+          </video>
+        )}
+        {children}
+      </div>
+    </>
   );
 }

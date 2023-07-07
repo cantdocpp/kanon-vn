@@ -21,6 +21,7 @@ export default function Gameplay({ stories, nextRoute }: Props) {
   const [bgImage, setBgImage] = React.useState("");
   const [bgm, setBgm] = React.useState("");
   const [voice, setVoice] = React.useState("");
+  const [animation, setAnimation] = React.useState("");
   const lastIndex = stories.length === storyIndex;
 
   React.useEffect(() => {
@@ -32,13 +33,21 @@ export default function Gameplay({ stories, nextRoute }: Props) {
     const story = stories[storyIndex];
 
     if (story.showText) {
-      setShowTextBox(story.showText);
+      if (story.showText == "no-text") {
+        setShowTextBox(false);
+      } else {
+        setShowTextBox(story.showText);
+      }
     }
     if (story.text) {
       setText(story.text);
     }
     if (story.bgm) {
-      setBgm(story.bgm);
+      if (story.bgm === "no-bgm") {
+        setBgm("");
+      } else {
+        setBgm(story.bgm);
+      }
     }
     if (story.bgImage) {
       setBgImage(story.bgImage);
@@ -47,6 +56,9 @@ export default function Gameplay({ stories, nextRoute }: Props) {
       setVoice(story.voice);
     } else {
       setVoice("");
+    }
+    if (story.animation) {
+      setAnimation(story.animation);
     }
   }, [storyIndex]);
 
@@ -58,7 +70,12 @@ export default function Gameplay({ stories, nextRoute }: Props) {
   };
 
   return (
-    <GameContainer bgImage={bgImage} bgMusic={bgm} onClick={handleClick}>
+    <GameContainer
+      bgImage={bgImage}
+      bgMusic={bgm}
+      animation={animation}
+      onClick={handleClick}
+    >
       {showTextbox && <Say text={text} voice={voice}></Say>}
     </GameContainer>
   );
